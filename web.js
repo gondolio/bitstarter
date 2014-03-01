@@ -5,9 +5,8 @@ var fs = require('fs');
 app.use(express.logger());
 
 var loadIndex = function() {
-	indexAsBuffer = fs.readFile('index.html');
-//	return indexAsBuffer.toString();
-	return typeof( indexAsBuffer ); 
+	indexAsBuffer = fs.readFileSync('./index.html');
+	return indexAsBuffer.toString();
 };
 app.get('/', function(request, response) {
   response.send(loadIndex());
