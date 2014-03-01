@@ -7,7 +7,7 @@ app.use(express.logger());
 var loadIndex = function() {
 	indexAsBuffer = fs.readFile('index.html');
 //	return indexAsBuffer.toString();
-	return typeOf( indexAsBuffer );
+	return typeOf indexAsBuffer; 
 };
 app.get('/', function(request, response) {
   response.send(loadIndex());
